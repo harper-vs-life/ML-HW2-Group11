@@ -36,8 +36,7 @@ class FFNN(nn.Module):
 
     def forward(self, input_vector):
         # [to fill] obtain first hidden layer representation
-        hidden_layer = self.W1(input_vector) # feed input layer through network to get hidden layer
-        hidden_layer = self.activation(hidden_layer) # call activation
+        hidden_layer = self.activation(self.W1(input_vector)) # feed input layer through network to get hidden layer and call activation
 
         # [to fill] obtain output layer representation
         output_layer = self.W2(hidden_layer) # feed hidden layer through network to get output layer
@@ -107,12 +106,6 @@ if __name__ == "__main__":
     parser.add_argument("--test_data", default = "to fill", help = "path to test data")
     parser.add_argument('--do_train', action='store_true')
     args = parser.parse_args()
-
-    #args.hidden_dim = 10
-    #args.epochs = 1
-    #args.train_data = "training.json"
-    #args.validation_data = "validation.json"
-    #args.test_data = "test.json"
 
     # fix random seeds
     random.seed(42)
@@ -188,5 +181,3 @@ if __name__ == "__main__":
         print("Validation completed for epoch {}".format(epoch + 1))
         print("Validation accuracy for epoch {}: {}".format(epoch + 1, correct / total))
         print("Validation time for this epoch: {}".format(time.time() - start_time))
-
-    # write out to results/test.out
