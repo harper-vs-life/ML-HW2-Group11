@@ -4,7 +4,7 @@
 - Harper Wood (hfw210000)
 - Viet Vu (vqv200000)
 - Poorna Bharanikumar (pxb200043)
-- Roj ? (rzp200000)
+- Roj Pawig (rzp200000)
 
 ## Command Line Argument Examples
 **FFNN**
